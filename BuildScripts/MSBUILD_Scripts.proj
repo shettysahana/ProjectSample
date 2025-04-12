@@ -1,0 +1,33 @@
+
+<Project>
+
+<PropertyGroup>
+    <Name>Claims</Name>
+    <FullName>Desktop.Claims</FullName>
+     <OutputDirectory>/Users/sahana/Desktop/Sahana/Projects/Claims/BuildScripts/Output/</OutputDirectory>
+    </PropertyGroup>
+
+
+
+<Target Name="_DisplayName">
+    <Message  
+         Text="Project File Name" />
+</Target>
+
+
+ <Target Name="_CreateDirectories">
+        <MakeDir
+            Directories="$(OutputDirectory)" />
+ </Target>
+
+
+<ItemGroup>
+        <MySourceFiles Include="a.cs;b.cs;c.cs"/>
+    </ItemGroup>
+
+ <Target Name="_CopyFiles">
+        <Copy SourceFiles="@(MySourceFiles)" 
+        DestinationFolder="$(OutputDirectory)" />
+ </Target>
+
+</Project>
